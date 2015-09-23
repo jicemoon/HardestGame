@@ -7,7 +7,9 @@ window.onload = function (){
         [2,12,0.02],[2,13,0.02],[2,14,0.02],[2,15,0.02],[2,16,0.02],
         [2,17],[2,18],[2,19],[2,20],[2,21],
         [2,22],[2,23],[2,24],[2,25]];
+    //初始化游戏, 两个参数分别表示"游戏所处的canvas画布元素"和"关卡设置, 可以省略(省略后将使用默认设置)"
     var hg = new HardestGame(document.getElementById("gameStage"), levelArray);
+    //游戏成功过关
     hg.levelSuccessHandle = function (){
         document.getElementById("currentLevel").getElementsByTagName("span")[0].innerHTML = hg.level;
         var time = 3;
@@ -22,6 +24,7 @@ window.onload = function (){
             }
         },1000);
     }
+    //游戏失败结束
     hg.gameOverHandle = function (){
         document.getElementById("currentLevel").getElementsByTagName("span")[0].innerHTML = hg.level;
         var time = 5;
@@ -36,9 +39,11 @@ window.onload = function (){
             }
         },1000);
     }
+    //初始化游戏
     hg.init();
     hg.canvas.parentNode.style.width = hg.canvas.width + "px";
     hg.canvas.parentNode.style.height = hg.canvas.height + "px";
+    //游戏开始
     hg.gameStart();
     document.getElementById("currentLevel").getElementsByTagName("span")[0].innerHTML = hg.level;
 }
