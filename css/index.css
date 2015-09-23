@@ -1,0 +1,44 @@
+/**
+ * Created by jicemoon on 2015/9/1.
+ */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after, .clearfix:before {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.layoutRoot{
+    text-align: center;
+}
+.layoutRoot .game{
+    background-color: #aaaaaa;
+    position: relative;
+}
+.layoutRoot .game .tips{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(55, 1, 1, 0.4);
+    display: inline-block;
+    min-width: 150px;
+    border: 1px solid rgba(243, 0, 255, 0.5);
+    box-shadow: 5px 5px 5px rgba(136, 136, 136, 0.6);
+    font-size: 20px;
+    padding: 5px 10px;
+    text-align: left;
+    color:#cccccc;
+}
+.layoutRoot .game .tips>p span{
+    color:#ffffff;
+}
+.layoutRoot .game .tips>p:nth-child(2){
+    color: #85ff02;
+}
