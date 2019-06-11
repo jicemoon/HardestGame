@@ -181,6 +181,7 @@
             this.isPause = true;
         },
         gameContinue:function(resetLevel){
+            if (!this.isPause) return;
             this.isPause = false;
             this.isCanTap = true;
             if(this.isOver || resetLevel){

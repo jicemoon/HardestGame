@@ -24,20 +24,36 @@ window.onload = function (){
             }
         },1000);
     }
-    //游戏失败结束
-    hg.gameOverHandle = function (){
+    var overModel = document.getElementById('gameOverDialog');
+    var btnContinue = document.getElementById('btnContinue');
+    var btnReStart = document.getElementById('btnReStart');
+    var overLevel = document.getElementById('overLevel');
+    btnContinue.addEventListener('click', function () {
+        overModel.style.display = 'none';
+        hg.gameContinue();
+    });
+    btnReStart.addEventListener('click', function () {
         document.getElementById("currentLevel").getElementsByTagName("span")[0].innerHTML = hg.level;
-        var time = 5;
-        document.getElementById("gameTip").innerHTML = "游戏结束, " + time + "秒后,继续游戏";
-        var interval = setInterval(function (){
-            time--;
-            document.getElementById("gameTip").innerHTML = "游戏结束, " + time + "秒后,继续游戏";
-            if(time <= 0){
-                clearInterval(interval);
-                document.getElementById("gameTip").innerHTML = "";
-                hg.gameContinue();
-            }
-        },1000);
+        overModel.style.display = 'none';
+        hg.gameStart();
+    });
+    //游戏失败结束
+    hg.gameOverHandle = function (level){
+        overLevel.innerHTML = level;
+        overModel.style.display = 'block';
+        // document.getElementById("currentLevel").getElementsByTagName("span")[0].innerHTML = hg.level;
+        // var time = 5;
+        // document.getElementById("gameTip").innerHTML = "游戏结束, " + time + "秒后,继续游戏";
+        // var interval = setInterval(function (){
+        //     time--;
+        //     document.getElementById("gameTip").innerHTML = "游戏结束, " + time + "秒后,继续游戏";
+        //     if(time <= 0){
+        //         clearInterval(interval);
+        //         document.getElementById("gameTip").innerHTML = "";
+        //         // hg.gameContinue();
+        //         hg.gameStart();
+        //     }
+        // },1000);
     }
     //初始化游戏
     hg.init();

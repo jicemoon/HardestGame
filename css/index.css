@@ -42,3 +42,25 @@
 .layoutRoot .game .tips>p:nth-child(2){
     color: #85ff02;
 }
+
+.layoutRoot .game .dialog {
+    width: 90%;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    border: 3px solid #d2e3eb;
+    border-radius: 5px;
+    text-align: center;
+}
+.layoutRoot .game .dialog>* {
+    padding: 20px;
+}
+.layoutRoot .game .dialog button {
+    padding: 6px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: azure;
+}
